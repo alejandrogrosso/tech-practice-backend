@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": "SAMGA55-256",
+      "title": "Samsung Galaxy A55 5G Dual SIM 256 GB azul oscuro 8 GB RAM",
+      "price": {
+        "currency": "USD",
+        "amount": 439,
+        "decimals": 0
+      },
+      "condition": "new",
+      "free_shipping": true,
+      "sold_quantity": 150,
+      "description": "Con su potente procesador y 8 GB de RAM, su computadora logrará un alto rendimiento con una alta velocidad de transmisión de contenidos y ejecutará varias aplicaciones al mismo tiempo, sin demoras.",
+      "pictures": [
+        {
+          "id": "1",
+          "url": "https://http2.mlstatic.com/D_NQ_NP_2X_601616-MLU74220374469_012024-F.webp"
+        },
+        {
+          "id": "2",
+          "url": "https://http2.mlstatic.com/D_NQ_NP_2X_766048-MLU74220374471_012024-F.webp"
+        }
+      ],
+      "seller": {
+        "id": "SAMSUNG-OFFICIAL",
+        "name": "Samsung Tienda Oficial",
+        "logo": "https://http2.mlstatic.com/D_Q_NP_968652-MLA25922764460_082017-AE.webp",
+        "seller_reputation": {
+          "transactions": {
+            "total": 45814,
+            "completed": 45500,
+            "canceled": 314
+          },
+          "power_seller_status": "platinum"
+        }
+      },
+      "attributes": [
+        {
+          "id": "BRAND",
+          "name": "Marca",
+          "value_name": "Samsung"
+        },
+        {
+          "id": "MODEL",
+          "name": "Modelo",
+          "value_name": "Galaxy A55"
+        },
+        {
+          "id": "RAM",
+          "name": "Memoria RAM",
+          "value_name": "8 GB"
+        },
+        {
+          "id": "STORAGE",
+          "name": "Memoria interna",
+          "value_name": "256 GB"
+        }
+      ],
+      "warranty": "Garantía de fábrica: 12 meses",
+      "payment_methods": {
+        "credit_card": ["Visa", "Mastercard", "American Express"],
+        "debit_card": ["Visa Débito", "Mastercard Débito"],
+        "other": ["Mercado Pago", "Efectivo"]
+      }
+    }
+  ]
+} 
