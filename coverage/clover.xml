@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747572330258" clover="3.2.0">
-  <project timestamp="1747572330258" name="All files">
-    <metrics statements="45" coveredstatements="45" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="7" elements="56" coveredelements="55" complexity="0" loc="45" ncloc="45" packages="5" files="5" classes="5"/>
+<coverage generated="1747581698855" clover="3.2.0">
+  <project timestamp="1747581698855" name="All files">
+    <metrics statements="73" coveredstatements="73" conditionals="25" coveredconditionals="24" methods="13" coveredmethods="13" elements="111" coveredelements="110" complexity="0" loc="73" ncloc="73" packages="5" files="5" classes="5"/>
     <package name="src">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="app.js" path="/Users/alejandrogrosso/Documents/tech-practice/tech-practice-backend/src/app.js">
@@ -24,22 +24,33 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <metrics statements="24" coveredstatements="24" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <file name="productsController.js" path="/Users/alejandrogrosso/Documents/tech-practice/tech-practice-backend/src/controllers/productsController.js">
-        <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="24" coveredstatements="24" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
         <line num="15" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="16" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.middlewares">
@@ -47,34 +58,51 @@
       <file name="errorHandler.js" path="/Users/alejandrogrosso/Documents/tech-practice/tech-practice-backend/src/middlewares/errorHandler.js">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.models">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="23" coveredstatements="23" conditionals="21" coveredconditionals="21" methods="7" coveredmethods="7"/>
       <file name="productModel.js" path="/Users/alejandrogrosso/Documents/tech-practice/tech-practice-backend/src/models/productModel.js">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <metrics statements="23" coveredstatements="23" conditionals="21" coveredconditionals="21" methods="7" coveredmethods="7"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
         <line num="13" count="4" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="cond" truecount="5" falsecount="0"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.routes">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="products.js" path="/Users/alejandrogrosso/Documents/tech-practice/tech-practice-backend/src/routes/products.js">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
       </file>
     </package>
   </project>

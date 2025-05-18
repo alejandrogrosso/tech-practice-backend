@@ -20,7 +20,7 @@ async function getByBrand(brand) {
 
 async function getSamsungShowcaseProducts() {
   const products = await getByBrand('Samsung');
-  return products.map(p => {
+  return products.slice(0, 2).map(p => {
     // Calcular descuento y cuotas
     const old = p.original_price ? p.original_price.toString().replace('.', ',') : null;
     const price = p.price ? p.price.toString().replace('.', ',') : null;
