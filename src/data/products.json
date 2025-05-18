@@ -70,7 +70,69 @@
       },
       "warranty": "Garantía de fábrica",
       "warranty_time": "12 meses",
-      "accepts_mercadopago": true
+      "accepts_mercadopago": true,
+      "payment_methods": [
+        { "type": "credit_card", "name": "Visa" },
+        { "type": "credit_card", "name": "Mastercard" },
+        { "type": "credit_card", "name": "OCA" },
+        { "type": "credit_card", "name": "AMEX" },
+        { "type": "debit_card", "name": "Visa Débito" },
+        { "type": "debit_card", "name": "Mastercard Débito" },
+        { "type": "cash", "name": "Abitab" },
+        { "type": "cash", "name": "Redpagos" }
+      ],
+      "installments": {
+        "quantity": 10,
+        "amount": 1914,
+        "currency": "USD",
+        "rate": 0,
+        "labels": ["sin interés"]
+      },
+      "rating": 4.8,
+      "reviews_count": 759,
+      "available_quantity": 50,
+      "related_products": [
+        {
+          "id": "SAMGM55-256",
+          "title": "Samsung Galaxy M55 5G 8/256GB Dual Sim Tiendazero",
+          "price": 421,
+          "old_price": 486,
+          "off": "13% OFF",
+          "image": "http://localhost:3000/images/products/galaxy-m55/front.jpg"
+        },
+        {
+          "id": "MOTOEDGE50-256",
+          "title": "Motorola Edge 50 Fusion 5G 256 Gb Azul Ártico 8 Gb Ram",
+          "price": 419,
+          "old_price": 435,
+          "off": "11% OFF",
+          "image": "http://localhost:3000/images/products/edge-50/front.jpg"
+        },
+        {
+          "id": "SAMGA15-256",
+          "title": "Samsung Galaxy A15 5G 8gb 256gb Negro Tranza",
+          "price": 326,
+          "old_price": 338,
+          "off": "3% OFF",
+          "image": "http://localhost:3000/images/products/galaxy-a15/front.jpg"
+        }
+      ],
+      "other_purchase_options": [
+        {
+          "id": "SAMGA55-128",
+          "title": "Samsung Galaxy A55 5G Dual SIM 128 GB",
+          "price": 399,
+          "seller": "Samsung Tienda Oficial",
+          "link": "#"
+        },
+        {
+          "id": "SAMGA55-256-2",
+          "title": "Samsung Galaxy A55 5G Dual SIM 256 GB (otro vendedor)",
+          "price": 435,
+          "seller": "CelularesUY",
+          "link": "#"
+        }
+      ]
     }
   ]
 } 

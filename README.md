@@ -1,6 +1,57 @@
-# API Backend - Detalle de Producto (Estilo MercadoLibre)
+# Tech Practice Backend – Mercado Libre Product Detail API
 
-Este proyecto implementa una API REST que simula el endpoint de detalle de producto de MercadoLibre.
+Este backend simula una API RESTful para una página de detalle de producto al estilo Mercado Libre. Está construido con Node.js y Express, y ahora tiene una estructura profesional y escalable.
+
+## 📁 Estructura de carpetas
+
+```
+src/
+├── app.js                  # Configuración principal de la app Express
+├── server.js               # Punto de entrada (levanta el servidor)
+├── routes/
+│   └── products.js         # Rutas de productos
+├── controllers/
+│   └── productsController.js # Lógica de negocio de productos
+├── models/
+│   └── productModel.js     # Acceso a datos de productos
+├── data/
+│   └── products.json       # Datos de productos
+├── middlewares/
+│   └── errorHandler.js     # Middleware de manejo de errores
+└── ...
+```
+
+## 🚀 Cómo ejecutar
+
+1. Instala dependencias:
+   ```bash
+   npm install
+   ```
+2. Crea un archivo `.env` con:
+   ```
+   PORT=3001
+   CORS_ORIGIN=http://localhost:3000
+   ```
+3. Ejecuta el servidor:
+   ```bash
+   npm start
+   # o
+   node src/server.js
+   ```
+
+## 🛠️ Endpoints principales
+
+- `GET /api/products` – Lista todos los productos
+- `GET /api/products/:id` – Detalle de un producto (incluye imágenes, precio, vendedor, métodos de pago, stock, calificaciones, relacionados, etc.)
+- `GET /api/health` – Healthcheck
+
+## 📝 Notas
+- El backend lee los datos desde un archivo JSON (no hay base de datos real).
+- La estructura es fácilmente escalable para agregar nuevas entidades, autenticación, etc.
+
+---
+
+¡Listo para usarse como backend de pruebas para el frontend de Mercado Libre!
 
 ## Requisitos
 

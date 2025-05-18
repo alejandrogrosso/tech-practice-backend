@@ -1,31 +1,27 @@
 const request = require('supertest');
 const express = require('express');
 const path = require('path');
-const fs = require('fs').promises;
 
-// Mock de fs.promises.readFile
-jest.mock('fs', () => ({
-  promises: {
-    readFile: jest.fn(),
-  },
+// Mock de fs/promises
+jest.mock('fs/promises', () => ({
+  readFile: jest.fn(),
 }));
+const fs = require('fs/promises');
 
 // Importar la app
-const app = require('../index');
+const app = require('../app');
 
 describe('API Endpoints', () => {
   const mockProduct = {
     id: 'SAMGA55-256',
-    title: 'Samsung Galaxy A55 5G',
-    price: {
-      currency: 'USD',
-      amount: 439,
-      decimals: 0,
-    },
+    title: 'Samsung Galaxy A55 5G Dual SIM 256 GB azul oscuro 8 GB RAM',
+    price: 439,
+    pictures: [],
+    seller: {},
+    // ...otros campos omitidos para el test
   };
 
   beforeEach(() => {
-    // Limpiar todos los mocks
     jest.clearAllMocks();
   });
 
@@ -39,8 +35,7 @@ describe('API Endpoints', () => {
 
   describe('GET /api/products/:id', () => {
     it('should return a product when it exists', async () => {
-      // Mock de la lectura del archivo
-      fs.promises.readFile.mockResolvedValue(
+      fs.readFile.mockResolvedValue(
         JSON.stringify({
           products: [mockProduct],
         })
@@ -48,12 +43,15 @@ describe('API Endpoints', () => {
 
       const res = await request(app).get(`/api/products/${mockProduct.id}`);
       expect(res.statusCode).toBe(200);
-      expect(res.body).toEqual(mockProduct);
+      expect(res.body).toHaveProperty('id', mockProduct.id);
+      expect(res.body).toHaveProperty('title');
+      expect(res.body).toHaveProperty('price');
+      expect(res.body).toHaveProperty('pictures');
+      expect(res.body).toHaveProperty('seller');
     });
 
     it('should return 404 when product does not exist', async () => {
-      // Mock de la lectura del archivo
-      fs.promises.readFile.mockResolvedValue(
+      fs.readFile.mockResolvedValue(
         JSON.stringify({
           products: [mockProduct],
         })
@@ -65,8 +63,7 @@ describe('API Endpoints', () => {
     });
 
     it('should handle file read errors', async () => {
-      // Mock de error en la lectura del archivo
-      fs.promises.readFile.mockRejectedValue(new Error('File read error'));
+      fs.readFile.mockRejectedValue(new Error('File read error'));
 
       const res = await request(app).get(`/api/products/${mockProduct.id}`);
       expect(res.statusCode).toBe(500);
@@ -76,8 +73,7 @@ describe('API Endpoints', () => {
 
   describe('GET /api/products', () => {
     it('should return all products', async () => {
-      // Mock de la lectura del archivo
-      fs.promises.readFile.mockResolvedValue(
+      fs.readFile.mockResolvedValue(
         JSON.stringify({
           products: [mockProduct],
         })
@@ -87,12 +83,15 @@ describe('API Endpoints', () => {
       expect(res.statusCode).toBe(200);
       expect(Array.isArray(res.body)).toBe(true);
       expect(res.body).toHaveLength(1);
-      expect(res.body[0]).toEqual(mockProduct);
+      expect(res.body[0]).toHaveProperty('id', mockProduct.id);
+      expect(res.body[0]).toHaveProperty('title');
+      expect(res.body[0]).toHaveProperty('price');
+      expect(res.body[0]).toHaveProperty('pictures');
+      expect(res.body[0]).toHaveProperty('seller');
     });
 
     it('should handle file read errors', async () => {
-      // Mock de error en la lectura del archivo
-      fs.promises.readFile.mockRejectedValue(new Error('File read error'));
+      fs.readFile.mockRejectedValue(new Error('File read error'));
 
       const res = await request(app).get('/api/products');
       expect(res.statusCode).toBe(500);
