@@ -3,14 +3,14 @@ const app = require('../app');
 const fs = require('fs/promises');
 const path = require('path');
 
-// Mock fs.readFile
+
 jest.mock('fs/promises', () => ({
   readFile: jest.fn()
 }));
 
 describe('API de Productos', () => {
   beforeEach(() => {
-    // Reset mocks before each test
+
     jest.clearAllMocks();
   });
 

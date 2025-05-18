@@ -2,13 +2,13 @@ const request = require('supertest');
 const express = require('express');
 const path = require('path');
 
-// Mock de fs/promises
+
 jest.mock('fs/promises', () => ({
   readFile: jest.fn(),
 }));
 const fs = require('fs/promises');
 
-// Importar la app
+
 const app = require('../app');
 
 describe('API Endpoints', () => {
@@ -18,7 +18,6 @@ describe('API Endpoints', () => {
     price: 439,
     pictures: [],
     seller: {},
-    // ...otros campos omitidos para el test
   };
 
   beforeEach(() => {
