@@ -19,4 +19,23 @@ exports.getProductById = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+};
+
+exports.getProductsByBrand = async (req, res, next) => {
+  try {
+    const brand = req.params.brand;
+    const products = await productModel.getByBrand(brand);
+    res.json(products);
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.getSamsungShowcaseProducts = async (req, res, next) => {
+  try {
+    const products = await productModel.getSamsungShowcaseProducts();
+    res.json(products);
+  } catch (error) {
+    next(error);
+  }
 }; 

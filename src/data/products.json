@@ -133,6 +133,66 @@
           "link": "#"
         }
       ]
+    },
+    {
+      "id": "SAMGS25-256",
+      "title": "Samsung Galaxy S25 256 Gb Garantía Oficial",
+      "brand": "Samsung",
+      "model": "Galaxy S25",
+      "price": 959,
+      "original_price": 1299,
+      "condition": "new",
+      "free_shipping": true,
+      "sold_quantity": 200,
+      "description": "El nuevo Galaxy S25 con pantalla Dynamic AMOLED y cámara de 108 Mpx.",
+      "pictures": [
+        { "id": "1", "url": "https://http2.mlstatic.com/D_Q_NP_2X_975071-MLA82294482013_022025-T.webp" }
+      ],
+      "seller": {
+        "id": "SAMSUNG-OFFICIAL",
+        "name": "Samsung Tienda Oficial",
+        "logo": "http://localhost:3000/images/brands/samsung-logo.png"
+      },
+      "installments": {
+        "quantity": 10,
+        "amount": 4181.24,
+        "currency": "USD",
+        "rate": 0,
+        "labels": ["sin interés"]
+      },
+      "rating": 4.9,
+      "reviews_count": 1200,
+      "available_quantity": 30
+    },
+    {
+      "id": "SAMGS25P-512",
+      "title": "Samsung Galaxy S25 Plus 512 Gb Garantía Oficial",
+      "brand": "Samsung",
+      "model": "Galaxy S25 Plus",
+      "price": 1379,
+      "original_price": 1699,
+      "condition": "new",
+      "free_shipping": true,
+      "sold_quantity": 120,
+      "description": "Galaxy S25 Plus con 512 GB de almacenamiento y batería de larga duración.",
+      "pictures": [
+        { "id": "1", "url": "https://http2.mlstatic.com/D_Q_NP_2X_877874-MLA82154417427_012025-T.webp" }
+      ],
+      "seller": {
+        "id": "SAMSUNG-OFFICIAL",
+        "name": "Samsung Tienda Oficial",
+        "logo": "http://localhost:3000/images/brands/samsung-logo.png"
+      },
+      "installments": {
+        "quantity": 10,
+        "amount": 6012.44,
+        "currency": "USD",
+        "rate": 0,
+        "labels": ["sin interés"]
+      },
+      "rating": 4.7,
+      "reviews_count": 900,
+      "available_quantity": 20
     }
   ]
 } 
