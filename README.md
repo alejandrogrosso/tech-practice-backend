@@ -1,128 +1,71 @@
-# Tech Practice Backend – Mercado Libre Product Detail API
+# Tech Practice Backend
 
-Este backend simula una API RESTful para una página de detalle de producto al estilo Mercado Libre. Está construido con Node.js y Express, y ahora tiene una estructura profesional y escalable.
+Este backend simula una API RESTful para una página de detalle de producto al estilo Mercado Libre. Está construido con Node.js y Express, y utiliza archivos JSON locales para persistencia.
 
-## 📁 Estructura de carpetas
+- **Stack:** Node.js, Express
+- **Persistencia:** Archivos JSON locales
+- **Tests:** Jest, Supertest
+- **Propósito:** Prototipo de backend para práctica técnica.
 
-```
-src/
-├── app.js                  # Configuración principal de la app Express
-├── server.js               # Punto de entrada (levanta el servidor)
-├── routes/
-│   └── products.js         # Rutas de productos
-├── controllers/
-│   └── productsController.js # Lógica de negocio de productos
-├── models/
-│   └── productModel.js     # Acceso a datos de productos
-├── data/
-│   └── products.json       # Datos de productos
-├── middlewares/
-│   └── errorHandler.js     # Middleware de manejo de errores
-└── ...
-```
-
-## 🚀 Cómo ejecutar
-
-1. Instala dependencias:
-   ```bash
-   npm install
-   ```
-2. Crea un archivo `.env` con:
-   ```
-   PORT=3001
-   CORS_ORIGIN=http://localhost:3000
-   ```
-3. Ejecuta el servidor:
-   ```bash
-   npm start
-   # o
-   node src/server.js
-   ```
-
-## 🛠️ Endpoints principales
-
-- `GET /api/products` – Lista todos los productos
-- `GET /api/products/:id` – Detalle de un producto (incluye imágenes, precio, vendedor, métodos de pago, stock, calificaciones, relacionados, etc.)
-- `GET /api/health` – Healthcheck
-
-## 📝 Notas
-- El backend lee los datos desde un archivo JSON (no hay base de datos real).
-- La estructura es fácilmente escalable para agregar nuevas entidades, autenticación, etc.
-
----
-
-¡Listo para usarse como backend de pruebas para el frontend de Mercado Libre!
-
-## Requisitos
-
-- Node.js (v14 o superior)
-- npm
+Para instrucciones de instalación, ejecución y pruebas, consulta el archivo `run.md` en esta misma carpeta.
 
 ## Instalación
 
-1. Clona el repositorio
+1. Clona el repositorio y entra a esta carpeta:
+   ```bash
+   git clone <REPO_URL>
+   cd tech-practice-backend
+   ```
 2. Instala las dependencias:
-```bash
-npm install
+   ```bash
+   npm install
+   ```
+
+## Variables de entorno
+Crea un archivo `.env` en la raíz de esta carpeta con el siguiente contenido:
+```
+PORT=3001
+CORS_ORIGIN=http://localhost:3000
 ```
 
-## Ejecución
-
-Para desarrollo (con hot reload):
+## Ejecución en desarrollo
 ```bash
 npm run dev
 ```
+El backend estará disponible en: http://localhost:3001
 
-Para producción:
+## Tests y cobertura
 ```bash
+npm test
+```
+
+## Build de producción
+```bash
+npm run build
 npm start
 ```
 
-El servidor se ejecutará en `http://localhost:3000`
-
-## Endpoints
-
-### GET /api/products
-Retorna la lista de todos los productos disponibles.
-
-### GET /api/products/:id
-Retorna los detalles de un producto específico.
-
-Ejemplo de respuesta:
-```json
-{
-  "id": "MLB1234567",
-  "title": "iPhone 13 Pro Max 256GB - Grafito",
-  "price": 999999.99,
-  "original_price": 1099999.99,
-  "currency_id": "ARS",
-  "condition": "new",
-  "thumbnail": "...",
-  "pictures": [...],
-  "seller": {...},
-  "shipping": {...},
-  "attributes": [...],
-  "warranty": "..."
-}
+## Estructura de carpetas principal
+```
+tech-practice-backend/
+├── src/
+│   ├── app.js            # Configuración principal de Express
+│   ├── server.js         # Punto de entrada
+│   ├── routes/           # Rutas de productos
+│   ├── controllers/      # Lógica de negocio
+│   ├── models/           # Acceso a datos
+│   ├── data/             # Datos en JSON
+│   └── middlewares/      # Manejo de errores
+└── ...
 ```
 
-## Dificultades y Soluciones
+## Decisiones de diseño y desafíos
+- **Estructura profesional:** Separación en rutas, controladores, modelos y middlewares.
+- **Persistencia:** Uso de archivos JSON para simular una base de datos.
+- **Manejo de errores:** Middleware centralizado para respuestas consistentes.
+- **Cobertura:** Se priorizó la cobertura de tests (>80%) usando Jest y Supertest.
+- **Desafíos:** Simular una API realista y robusta sin base de datos real.
 
-1. **Almacenamiento de Datos**: 
-   - Desafío: No poder usar bases de datos reales.
-   - Solución: Implementación de un sistema de almacenamiento basado en archivos JSON locales, que permite una estructura de datos rica y fácil de mantener.
+---
 
-2. **Estructura de Datos**: 
-   - Desafío: Replicar la estructura de datos compleja de MercadoLibre.
-   - Solución: Análisis de la API real de MercadoLibre para crear un modelo de datos simplificado pero representativo.
-
-3. **Manejo de Errores**:
-   - Desafío: Gestión robusta de errores para diferentes escenarios.
-   - Solución: Implementación de un sistema de manejo de errores centralizado con respuestas HTTP apropiadas.
-
-## Mejoras Futuras
-
-- Implementar caché para mejorar el rendimiento
-- Agregar validación de datos más robusta
-- Implementar sistema de búsqueda y filtros
-- Agregar más endpoints para una experiencia más completa 
+¡Listo! Este backend puede ejecutarse y testearse de forma completamente independiente. 
