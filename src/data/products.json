@@ -10,7 +10,16 @@
       "condition": "new",
       "free_shipping": true,
       "sold_quantity": 150,
-      "description": "Con su potente procesador y 8 GB de RAM, su computadora logrará un alto rendimiento con una alta velocidad de transmisión de contenidos y ejecutará varias aplicaciones al mismo tiempo, sin demoras.",
+      "description": [
+        {
+          "subtitle": "Capacidad y eficiencia",
+          "text": "Con su potente procesador y 8 GB de RAM, su computadora logrará un alto rendimiento con una alta velocidad de transmisión de contenido y ejecutará varias aplicaciones al mismo tiempo, sin demoras."
+        },
+        {
+          "subtitle": "Capacidad de almacenamiento ilimitada",
+          "text": "Olvídate de borrar. Con su memoria interna de 256 GB puedes descargar todos los archivos y aplicaciones que necesites, guardar fotos y almacenar tus películas, series y videos favoritos para reproducirlos cuando quieras."
+        }
+      ],
       "pictures": [
         {
           "id": "1",
