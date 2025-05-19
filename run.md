@@ -28,14 +28,3 @@ npm run dev
 ```bash
 npm test
 ```
-
-## Build de producción
-
-```bash
-npm run build
-npm start
-```
-
----
-
-> Para instrucciones completas y detalles de arquitectura, revisa el archivo `../run.md` en la raíz del proyecto. 
