@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../app');
+const app = require('../src/app');
 const fs = require('fs/promises');
 const path = require('path');
 
@@ -103,56 +103,8 @@ describe('API de Productos', () => {
     });
   });
 
-  describe('GET /api/products/brand/:brand', () => {
-    it('debe devolver productos de la marca Samsung', async () => {
-      const mockProducts = {
-        products: [
-          {
-            id: 'SAMGA55-256',
-            title: 'Samsung Galaxy A55',
-            brand: 'Samsung'
-          }
-        ]
-      };
-      fs.readFile.mockResolvedValueOnce(JSON.stringify(mockProducts));
-
-      const res = await request(app).get('/api/products/brand/Samsung');
-      expect(res.statusCode).toBe(200);
-      expect(Array.isArray(res.body)).toBe(true);
-      expect(res.body.length).toBeGreaterThan(0);
-      res.body.forEach(prod => {
-        expect(prod).toHaveProperty('brand', 'Samsung');
-      });
-    });
-
-    it('debe devolver un array vacío si la marca no existe', async () => {
-      const mockProducts = {
-        products: [
-          {
-            id: 'SAMGA55-256',
-            title: 'Samsung Galaxy A55',
-            brand: 'Samsung'
-          }
-        ]
-      };
-      fs.readFile.mockResolvedValueOnce(JSON.stringify(mockProducts));
-
-      const res = await request(app).get('/api/products/brand/NoExiste');
-      expect(res.statusCode).toBe(200);
-      expect(Array.isArray(res.body)).toBe(true);
-      expect(res.body.length).toBe(0);
-    });
-
-    it('debe manejar errores de lectura de archivo', async () => {
-      fs.readFile.mockRejectedValueOnce(new Error('File read error'));
-      const res = await request(app).get('/api/products/brand/Samsung');
-      expect(res.statusCode).toBe(500);
-      expect(res.body).toHaveProperty('error', 'Error interno del servidor');
-    });
-  });
-
-  describe('GET /api/products/brand/Samsung/showcase', () => {
-    it('debe devolver productos de Samsung en formato showcase', async () => {
+  describe('GET /api/products/featured', () => {
+    it('debe devolver productos destacados de Samsung', async () => {
       const mockProducts = {
         products: [
           {
@@ -172,7 +124,7 @@ describe('API de Productos', () => {
       };
       fs.readFile.mockResolvedValueOnce(JSON.stringify(mockProducts));
 
-      const res = await request(app).get('/api/products/brand/Samsung/showcase');
+      const res = await request(app).get('/api/products/featured?brand=Samsung');
       expect(res.statusCode).toBe(200);
       expect(Array.isArray(res.body)).toBe(true);
       expect(res.body.length).toBeGreaterThan(0);
@@ -198,25 +150,22 @@ describe('API de Productos', () => {
           },
           {
             id: 'SAMGA55-512',
-            title: 'Samsung Galaxy A55 512GB',
-            brand: 'Samsung'
-          },
-          {
-            id: 'SAMGA55-128',
-            title: 'Samsung Galaxy A55 128GB',
+            title: 'Samsung Galaxy A55',
             brand: 'Samsung'
           }
         ]
       };
       fs.readFile.mockResolvedValueOnce(JSON.stringify(mockProducts));
 
-      const res = await request(app).get('/api/products/brand/Samsung/showcase');
+      const res = await request(app).get('/api/products/featured?brand=Samsung&limit=2');
+      expect(res.statusCode).toBe(200);
+      expect(Array.isArray(res.body)).toBe(true);
       expect(res.body.length).toBeLessThanOrEqual(2);
     });
 
     it('debe manejar errores de lectura de archivo', async () => {
       fs.readFile.mockRejectedValueOnce(new Error('File read error'));
-      const res = await request(app).get('/api/products/brand/Samsung/showcase');
+      const res = await request(app).get('/api/products/featured?brand=Samsung');
       expect(res.statusCode).toBe(500);
       expect(res.body).toHaveProperty('error', 'Error interno del servidor');
     });

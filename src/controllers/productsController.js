@@ -2,7 +2,8 @@ const productModel = require('../models/productModel');
 
 exports.getAllProducts = async (req, res, next) => {
   try {
-    const products = await productModel.getAll();
+    const { brand, featured, limit, page } = req.query;
+    const products = await productModel.getAll({ brand, featured, limit, page });
     res.json(products);
   } catch (error) {
     next(error);
@@ -21,19 +22,10 @@ exports.getProductById = async (req, res, next) => {
   }
 };
 
-exports.getProductsByBrand = async (req, res, next) => {
+exports.getFeaturedProducts = async (req, res, next) => {
   try {
-    const brand = req.params.brand;
-    const products = await productModel.getByBrand(brand);
-    res.json(products);
-  } catch (error) {
-    next(error);
-  }
-};
-
-exports.getSamsungShowcaseProducts = async (req, res, next) => {
-  try {
-    const products = await productModel.getSamsungShowcaseProducts();
+    const { brand, limit } = req.query;
+    const products = await productModel.getFeatured({ brand, limit });
     res.json(products);
   } catch (error) {
     next(error);
